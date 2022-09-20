@@ -7,13 +7,22 @@ import Login from './Login'
 import Signup from './Signup'
 
 function App() {
-  const [count, setCount] = useState(0);
+  
+  const [currentUser, setCurrentUser] = useState({})
+  const [loggedIn, setLoggedIn] = useState(false)
 
   useEffect(() => {
-    fetch("/hello")
-      .then((r) => r.json())
-      .then((data) => setCount(data.count));
-  }, []);
+    fetch(`/logged_in`)
+      .then(res => {
+        if (res.ok) {
+          setLoggedIn(true)
+          res.json().then(user => setCurrentUser(user))
+        }
+
+      }
+      )
+  }, loggedIn);
+
 
   return (
     <BrowserRouter>
@@ -24,10 +33,10 @@ function App() {
             <Home/>
           </Route>
           <Route path="/login">
-            <Login/>
+            <Login setCurrentUser={setCurrentUser}/>
           </Route>
           <Route path="/signup">
-            <Signup/>
+            <Signup setCurrentUser={setCurrentUser} setLoggedIn={setLoggedIn}/>
           </Route>
         </Switch>
       </div>
