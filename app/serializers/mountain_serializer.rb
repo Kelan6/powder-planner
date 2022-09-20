@@ -1,3 +1,3 @@
 class MountainSerializer < ActiveModel::Serializer
-  attributes :id, :tite, :address, :elevation
+  attributes :id, :title, :address, :elevation
 end

@@ -1,9 +1,11 @@
 # config/routes.rb
 Rails.application.routes.draw do
-  resources :lifts
   resources :mountains
+  resources :lifts, only: [:index, :show]
+  resources :mountains, only: [:index, :show]
   resources :events
   resources :users
+
   post "/signup", to: 'users#create'
   post "/login", to: "sessions#create"
   delete "/logout", to: "sessions#destroy"
