@@ -6,6 +6,7 @@ function NavBar() {
   return (
     <div>
                 <Link className="route-link" to="/home">Home</Link>
+                <Link className="route-link" to="/planner">Planner</Link>
                 <Link className="route-link" to="/signup">Signup</Link>
                 <Link className="route-link" to="/login">Login</Link>
     </div>

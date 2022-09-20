@@ -5,6 +5,7 @@ import NavBar from './NavBar'
 import Home from './Home'
 import Login from './Login'
 import Signup from './Signup'
+import Planner from './Planner'
 
 function App() {
   
@@ -26,11 +27,14 @@ function App() {
 
   return (
     <BrowserRouter>
-    <NavBar/>
+    <NavBar setCurrentUser={setCurrentUser}loggedIn={loggedIn} setLoggedIn={setLoggedIn}/>
       <div className="App">
         <Switch>
           <Route exact path="/">
             <Home/>
+          </Route>
+          <Route exact path="/planner">
+            <Planner setCurrentUser={setCurrentUser}loggedIn={loggedIn} setLoggedIn={setLoggedIn}/>
           </Route>
           <Route path="/login">
             <Login setCurrentUser={setCurrentUser}setLoggedIn={setLoggedIn}/>
