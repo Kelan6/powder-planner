@@ -47,13 +47,13 @@ function Signup({ setCurrentUser, setLoggedIn }) {
         <div className="form-container">
           <form className="login-signup-form" onSubmit={handleSubmit}>
             <section className="input-form">
-              <label>Username:</label>
+              <label>Name:</label>
               <input
                 type="text"
                 name="name"
                 value={name}
                 onChange={handleChange}
-                placeholder="  Enter Username">
+                placeholder="  Enter Name">
               </input>
             </section>
 
