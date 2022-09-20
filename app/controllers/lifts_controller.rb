@@ -1,0 +1,3 @@
+class LiftsController < ApplicationController
+
+end

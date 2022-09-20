@@ -18,7 +18,7 @@ function Login({setLoggedIn, setCurrentUser}) {
     
       function handleSubmit(e) {
         e.preventDefault();
-        fetch("/login", {
+        fetch(`/login`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -33,6 +33,7 @@ function Login({setLoggedIn, setCurrentUser}) {
             });
           } else {
             res.json().then((errors) => {
+              console.error(errors)
             });
           }
         });
