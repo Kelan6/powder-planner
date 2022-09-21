@@ -6,11 +6,13 @@ import Home from './Home'
 import Login from './Login'
 import Signup from './Signup'
 import Planner from './Planner'
+import Mountains from './Mountains'
 
 function App() {
   
   const [currentUser, setCurrentUser] = useState({})
   const [loggedIn, setLoggedIn] = useState(false)
+  const [mounts, setMounts] = useState({})
 
   useEffect(() => {
     fetch(`/logged_in`)
@@ -18,20 +20,28 @@ function App() {
         if (res.ok) {
           setLoggedIn(true)
           res.json().then(user => setCurrentUser(user))
+          
         }
 
       }
       )
   }, loggedIn);
 
-
+  useEffect(() => {
+    fetch("/mountains")
+      .then((res) => res.json())
+      .then((Arr) => {
+        setMounts(Arr);
+        console.log(mounts)
+      });
+  }, []);
   return (
     <BrowserRouter>
     <NavBar setCurrentUser={setCurrentUser}loggedIn={loggedIn} setLoggedIn={setLoggedIn}/>
       <div className="App">
         <Switch>
           <Route exact path="/">
-            <Home/>
+            <Home />
           </Route>
           <Route exact path="/planner">
             <Planner setCurrentUser={setCurrentUser}loggedIn={loggedIn} setLoggedIn={setLoggedIn}/>
@@ -41,6 +51,9 @@ function App() {
           </Route>
           <Route path="/signup">
             <Signup setCurrentUser={setCurrentUser} setLoggedIn={setLoggedIn}/>
+          </Route>
+          <Route path="/our-mountains">
+            <Mountains mounts={mounts}/>
           </Route>
         </Switch>
       </div>

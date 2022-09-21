@@ -5,7 +5,7 @@ class MountainsController < ApplicationController
     end
   
     def show
-        render json: set_mountain, include: :lift
+        render json: set_mountain
     end
 
     private 

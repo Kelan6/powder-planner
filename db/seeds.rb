@@ -1,18 +1,66 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
-#   Character.create(name: "Luke", movie: movies.first)
+#Users
 User.create(name: 'kelan', password: 'kelan', email: 'kelan@yahoo.com', snowboarder: true)
 User.create(name: 'alyssa', password: 'alyssa', email: 'alyssa@yahoo.com', snowboarder: true)
 
+#Mountains 
 Mountain.create(title: 'Keystone', address: '100 Dercum Square, Keystone, CO 80435', elevation: '12,408 feet')
 Mountain.create(title: 'Breckenridge', address: '1599 Ski Hill Rd, Breckenridge, CO 80424', elevation: '12,998 feet')
+Mountain.create(title: 'Crested Butte', address: '12 Snowmass Rd, Crested Butte, CO', elevation: '8,909 feet')
 
+
+#Events
 Event.create(user_id: 1, mountain_id: 2, name: 'Shred Schoolmarm')
 Event.create(user_id: 2, mountain_id: 1, name: 'Meet me at Peak 6')
+Event.create(user_id: 1, mountain_id: 3, name: 'See ya on Painter Boy')
 
-Lift.create(title: 'Montezuma', mountain_id: 1)
-Lift.create(title: 'Kensho Super Chair', mountain_id: 2)
+#Lifts
+Lift.create(title: 'River Run Gondola', mountain_id: 1)
+Lift.create(title: 'Outpost Gondola', mountain_id: 1)
+Lift.create(title: 'Ruby Express', mountain_id: 1)
+Lift.create(title: 'Montezuma Express', mountain_id: 1)
+Lift.create(title: 'Peru Express', mountain_id: 1)
+Lift.create(title: 'Outback Express', mountain_id: 1)
+Lift.create(title: 'Summit Express', mountain_id: 1)
+Lift.create(title: 'Wayback', mountain_id: 1)
+Lift.create(title: 'Ranger', mountain_id: 1)
+Lift.create(title: 'A 51', mountain_id: 1)
+Lift.create(title: 'Discovery', mountain_id: 1)
+
+Lift.create(title: 'Breckconnect Gondola', mountain_id: 2)
+Lift.create(title: 'Falcon SuperChair', mountain_id: 2)
+Lift.create(title: 'Quicksilver SuperChair', mountain_id: 2)
+Lift.create(title: 'Colorado SuperChair', mountain_id: 2)
+Lift.create(title: 'Independence SuperChair', mountain_id: 2)
+Lift.create(title: 'Kensho SuperChair', mountain_id: 2)
+Lift.create(title: 'Mercury SuperChair', mountain_id: 2)
+Lift.create(title: 'Beaver Run SuperChair', mountain_id: 2)
+Lift.create(title: 'Peak 8 SuperConnect', mountain_id: 2)
+Lift.create(title: 'Rocky Mountain SuperChair', mountain_id: 2)
+Lift.create(title: 'Imperial Express SuperChair', mountain_id: 2)
+Lift.create(title: 'Freedom SuperChair', mountain_id: 2)
+Lift.create(title: 'Zendo', mountain_id: 2)
+Lift.create(title: 'A-lift', mountain_id: 2)
+Lift.create(title: 'C-lift', mountain_id: 2)
+Lift.create(title: 'E-lift', mountain_id: 2)
+Lift.create(title: 'Snowflake', mountain_id: 2)
+Lift.create(title: 'Rip Ride', mountain_id: 2)
+Lift.create(title: 'Lift-5', mountain_id: 2)
+Lift.create(title: 'Lift-6', mountain_id: 2)
+Lift.create(title: 'T-Bar', mountain_id: 2)
+Lift.create(title: 'Trygve Platter', mountain_id: 2)
+Lift.create(title: 'Eldorado Platter', mountain_id: 2)
+Lift.create(title: 'Camelback Platter', mountain_id: 2)
+
+Lift.create(title: 'Peachtree', mountain_id: 3)
+Lift.create(title: 'Teocalli Lift', mountain_id: 3)
+Lift.create(title: 'East River Express', mountain_id: 3)
+Lift.create(title: 'Red Lady Express', mountain_id: 3)
+Lift.create(title: 'Paradise Express', mountain_id: 3)
+Lift.create(title: 'Silver Queen Express', mountain_id: 3)
+Lift.create(title: 'West Wall', mountain_id: 3)
+Lift.create(title: 'Prospect Lift', mountain_id: 3)
+Lift.create(title: 'Painter Boy', mountain_id: 3)
+Lift.create(title: 'Gold Link', mountain_id: 3)
+Lift.create(title: 'North Face', mountain_id: 3)
+Lift.create(title: 'The High Lift', mountain_id: 3)
+
