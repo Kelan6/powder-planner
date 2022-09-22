@@ -1,8 +1,11 @@
 import React from 'react'
 
-function Profile() {
+function Profile({currentUser, setCurrentUser}) {
+  
   return (
-    <div> this is my profile</div>
+    <div> 
+      <h1>{currentUser.name}</h1>
+       </div>
   )
 }
 

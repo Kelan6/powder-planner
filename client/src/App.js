@@ -29,16 +29,17 @@ function App() {
       )
   }, loggedIn);
 
+
   return (
     <BrowserRouter>
-    <NavBar setCurrentUser={setCurrentUser}loggedIn={loggedIn} setLoggedIn={setLoggedIn}/>
+    <NavBar currentUser={currentUser} setCurrentUser={setCurrentUser}loggedIn={loggedIn} setLoggedIn={setLoggedIn}/>
       <div className="App">
         <Switch>
           <Route exact path="/">
             <Home />
           </Route>
           <Route exact path="/planner">
-            <Planner setCurrentUser={setCurrentUser}loggedIn={loggedIn} setLoggedIn={setLoggedIn}/>
+            <Planner setCurrentUser={setCurrentUser} currentUser={currentUser} />
           </Route>
           <Route path="/login">
             <Login setCurrentUser={setCurrentUser}setLoggedIn={setLoggedIn}/>
@@ -53,7 +54,7 @@ function App() {
             <About/>
           </Route>
           <Route path="/profile">
-            <Profile/>
+            <Profile currentUser={currentUser} setCurrentUser={setCurrentUser}/>
           </Route>
         </Switch>
       </div>

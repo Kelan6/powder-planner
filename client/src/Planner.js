@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react'
 import {Table} from 'flowbite-react'
 
 
-function Planner() {
+function Planner({currentUser, setCurrentUser}) {
 
   const [events, setEvents] = useState([]);
 
@@ -14,6 +14,7 @@ function Planner() {
         console.log(events)
       });
   }, []);
+
 
   function handleAddClick(){
     console.log('this is where we POST event')
@@ -44,7 +45,7 @@ function Planner() {
         <tbody>
             <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
                 <th scope="row" class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                    Example Placeholder
+                    
                 </th>
                 <td class="py-4 px-6">
                     mountain.name

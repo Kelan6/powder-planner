@@ -4,7 +4,7 @@ import { Navbar, Dropdown, Avatar } from 'flowbite-react'
 import snowflake from './assets/snowflake.png'
 import menu from './assets/menu.png'
 
-function NavBar({ setCurrentUser, loggedIn, setLoggedIn}) {
+function NavBar({ currentUser,setCurrentUser, loggedIn, setLoggedIn}) {
 
   let history = useHistory()
 
@@ -48,10 +48,10 @@ rounded={true}
   >
     <Dropdown.Header>
       <span className="block text-sm">
-        Kelan Hamman
+        {currentUser.name}
       </span>
       <span className="block truncate text-sm font-medium">
-        kelan@flatiron.com
+        {currentUser.email}
       </span>
     </Dropdown.Header>
     <Dropdown.Item onClick={toProfile}>Profile
