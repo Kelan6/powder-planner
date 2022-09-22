@@ -1,8 +1,19 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import {Table} from 'flowbite-react'
 
 
 function Planner() {
+
+  const [events, setEvents] = useState([]);
+
+  useEffect(() => {
+    fetch("/events")
+      .then((res) => res.json())
+      .then((events) => {
+        setEvents(events);
+        console.log(events)
+      });
+  }, []);
 
   function handleAddClick(){
     console.log('this is where we POST event')
