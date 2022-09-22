@@ -4,3 +4,7 @@
 .carousel{
   padding-top: 70px;
 }
+
+#button{
+  display: flex;
+}

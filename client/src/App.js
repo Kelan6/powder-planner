@@ -14,7 +14,7 @@ function App() {
   
   const [currentUser, setCurrentUser] = useState({})
   const [loggedIn, setLoggedIn] = useState(false)
-  const [mounts, setMounts] = useState({})
+
 
   useEffect(() => {
     fetch(`/logged_in`)
@@ -29,14 +29,6 @@ function App() {
       )
   }, loggedIn);
 
-  useEffect(() => {
-    fetch("/mountains")
-      .then((res) => res.json())
-      .then((Arr) => {
-        setMounts(Arr);
-        console.log(mounts)
-      });
-  }, []);
   return (
     <BrowserRouter>
     <NavBar setCurrentUser={setCurrentUser}loggedIn={loggedIn} setLoggedIn={setLoggedIn}/>
@@ -55,7 +47,7 @@ function App() {
             <Signup setCurrentUser={setCurrentUser} setLoggedIn={setLoggedIn}/>
           </Route>
           <Route path="/mountains">
-            <Mountains mounts={mounts}/>
+            <Mountains/>
           </Route>
           <Route path="/about">
             <About/>

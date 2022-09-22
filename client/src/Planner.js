@@ -1,7 +1,16 @@
 import React from 'react'
 import {Table} from 'flowbite-react'
 
+
 function Planner() {
+
+  function handleAddClick(){
+    console.log('this is where we POST event')
+  }
+  function handleEdit(){
+    console.log('this is where we PATCH event')
+  }
+
   return (
     <div class="relative shadow-md sm:rounded-lg">
     <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400 pt-10px">
@@ -16,56 +25,35 @@ function Planner() {
                 <th scope="col" class="py-3 px-6">
                     Lift
                 </th>
+                <th scope="col" class="py-3 px-6">
+                    TIME
+                </th>
             </tr>
         </thead>
         <tbody>
             <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
                 <th scope="row" class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                    Apple MacBook Pro 17"
+                    Example Placeholder
                 </th>
                 <td class="py-4 px-6">
-                    Sliver
+                    mountain.name
                 </td>
                 <td class="py-4 px-6">
-                    Laptop
+                    lift.name
+                </td>
+                <td class="py-4 px-6">
+                    event.time
                 </td>
                
                 <td class="py-4 px-6 text-right">
-                    <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
+                    <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline" onClick={handleEdit}>Edit</a>
                 </td>
+           
             </tr>
-            <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-                <th scope="row" class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                    Microsoft Surface Pro
-                </th>
-                <td class="py-4 px-6">
-                    White
-                </td>
-                <td class="py-4 px-6">
-                    Laptop PC
-                </td>
-                
-                <td class="py-4 px-6 text-right">
-                    <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
-                </td>
-            </tr>
-            <tr class="bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-600">
-                <th scope="row" class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                    Magic Mouse 2
-                </th>
-                <td class="py-4 px-6">
-                    Black
-                </td>
-                <td class="py-4 px-6">
-                    Accessories
-                </td>
-                
-                <td class="py-4 px-6 text-right">
-                    <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
-                </td>
-            </tr>
+            <button className= 'flex justify-center' onClick={handleAddClick}> + </button>
         </tbody>
     </table>
+   
 </div>
   )
 }
