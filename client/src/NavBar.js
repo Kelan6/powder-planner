@@ -14,7 +14,7 @@ function NavBar({ setCurrentUser, loggedIn, setLoggedIn}) {
             if (res.ok) {
                 setCurrentUser(null)
                 setLoggedIn(false)
-                alert('logged out')
+                alert('You have logged out')
                 history.push('./')
             }
         })
