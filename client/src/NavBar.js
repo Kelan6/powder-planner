@@ -72,7 +72,7 @@ rounded={true}
 </div>
 <Navbar.Collapse>
   <Navbar.Link
-    href="/home"
+    href="/"
     active={true}
   >
     Home
