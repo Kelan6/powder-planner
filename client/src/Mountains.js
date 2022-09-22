@@ -3,7 +3,7 @@ import React from 'react'
 function Mountains({mounts}) {
 
   return (
-    <div>  </div>
+    <div>  Mountains page </div>
   )
 }
 

@@ -1,79 +1,90 @@
 import React from 'react'
-// import {Link} from 'react-router-dom'
+import {useHistory, Link} from 'react-router-dom'
 import { Navbar, Dropdown, Avatar } from 'flowbite-react'
+import snowflake from './assets/snowflake.png'
+import menu from './assets/menu.png'
 
-function NavBar() {
+function NavBar({ setCurrentUser, loggedIn, setLoggedIn}) {
+
+  let history = useHistory()
+
+  const handleLogout = () => {
+    fetch('/logout', { method: "DELETE" })
+        .then(res => {
+            if (res.ok) {
+                setCurrentUser(null)
+                setLoggedIn(false)
+                alert('logged out')
+                history.push('./')
+            }
+        })
+}
+function handleClick() {
+  history.push('./')
+}
+
+function toProfile(){
+  history.push('./profile')
+}
 
   return (
-    // <div id='navbar'>
-    //             <Link className="route-link" to="/">Home</Link>
-    //             <Link className="route-link" to="/planner">Planner</Link>
-    //             <Link className="route-link" to="/signup">Signup</Link>
-    //             <Link className="route-link" to="/login">Login</Link>
-    // </div>
-
 <Navbar
 fluid={true}
 rounded={true}
 >
-<Navbar.Brand href="https://flowbite.com/">
+<Navbar.Brand >
   <img
-    src="https://flowbite.com/docs/images/logo.svg"
-    className="mr-3 h-6 sm:h-9"
-    alt="Flowbite Logo"
+    src={snowflake} alt='' width='30px' onClick={handleClick}
   />
-  <span className="self-center whitespace-nowrap text-xl font-semibold dark:text-white">
-    Flowbite
+  <span className="self-center whitespace-nowrap text-xl font-semibold dark:text-white"onClick={handleClick}>
+          Powder Planner
   </span>
 </Navbar.Brand>
 <div className="flex md:order-2">
   <Dropdown
     arrowIcon={false}
     inline={true}
-    label={<Avatar alt="User settings" img="https://flowbite.com/docs/images/people/profile-picture-5.jpg" rounded={true}/>}
+    label={<Avatar alt="User settings" img="" rounded={true}/>}
   >
     <Dropdown.Header>
       <span className="block text-sm">
-        Bonnie Green
+        Kelan Hamman
       </span>
       <span className="block truncate text-sm font-medium">
-        name@flowbite.com
+        kelan@flatiron.com
       </span>
     </Dropdown.Header>
-    <Dropdown.Item>
-      Dashboard
+    <Dropdown.Item onClick={toProfile}>Profile
     </Dropdown.Item>
     <Dropdown.Item>
-      Settings
-    </Dropdown.Item>
-    <Dropdown.Item>
-      Earnings
+    <Link className="route-link" to="/planner"> Events</Link>
     </Dropdown.Item>
     <Dropdown.Divider />
     <Dropdown.Item>
-      Sign out
+    {loggedIn ? 
+    (<div id="banner">
+                <Link className="route-link" to="/" onClick={handleLogout}>Logout</Link></div>) 
+                :
+                (<Link className="route-link" to="/login">Login</Link>)}
     </Dropdown.Item>
   </Dropdown>
   <Navbar.Toggle />
 </div>
 <Navbar.Collapse>
   <Navbar.Link
-    href="/navbars"
+    href="/home"
     active={true}
   >
     Home
   </Navbar.Link>
-  <Navbar.Link href="/navbars">
-    About
+  <Navbar.Link href="/about">
+    About 
   </Navbar.Link>
-  <Navbar.Link href="/navbars">
-    Services
+  <Navbar.Link href="/mountains">
+    Mountains
   </Navbar.Link>
-  <Navbar.Link href="/navbars">
-    Pricing
-  </Navbar.Link>
-  <Navbar.Link href="/navbars">
-    Contact
+  <Navbar.Link href="/planner">
+    Planner
   </Navbar.Link>
 </Navbar.Collapse>
 </Navbar>

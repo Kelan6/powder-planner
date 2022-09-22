@@ -7,6 +7,8 @@ import Login from './Login'
 import Signup from './Signup'
 import Planner from './Planner'
 import Mountains from './Mountains'
+import About from './About'
+import Profile from './Profile'
 
 function App() {
   
@@ -52,8 +54,14 @@ function App() {
           <Route path="/signup">
             <Signup setCurrentUser={setCurrentUser} setLoggedIn={setLoggedIn}/>
           </Route>
-          <Route path="/our-mountains">
+          <Route path="/mountains">
             <Mountains mounts={mounts}/>
+          </Route>
+          <Route path="/about">
+            <About/>
+          </Route>
+          <Route path="/profile">
+            <Profile/>
           </Route>
         </Switch>
       </div>
