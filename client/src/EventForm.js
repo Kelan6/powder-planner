@@ -15,7 +15,17 @@ const [formData, setFormData]=useState({
 
 function handleSubmit(e){
     e.preventDefault()
-    console.log(formData)
+
+const formDataBody = {...formData, mountain_id: parseInt(formData.mountain_id)}
+fetch("/events", {
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(formDataBody)
+})
+.then(res => res.json)
+.then(data=> console.log(data))
 }
 
 function handleGoBack(){

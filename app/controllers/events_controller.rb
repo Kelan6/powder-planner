@@ -1,4 +1,5 @@
 class EventsController < ApplicationController
+  wrap_parameters format: []
 
   def index
     render json: Event.all
