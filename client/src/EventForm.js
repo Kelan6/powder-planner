@@ -13,8 +13,9 @@ const [formData, setFormData]=useState({
     time: ''
 })
 
-function handleCreate(){
-    console.log('post')
+function handleSubmit(e){
+    e.preventDefault()
+    console.log(formData)
 }
 
 function handleGoBack(){
@@ -24,7 +25,7 @@ function handleGoBack(){
 function handleChange(e){
     setFormData({...formData,[e.target.name]: e.target.value})
 }
-console.log(formData)
+
   return (
     <React.Fragment>
   <Modal
@@ -38,6 +39,7 @@ console.log(formData)
         <h3 className="text-xl font-medium text-gray-900 dark:text-white">
           Create your meet up! ❄️
         </h3>
+        <form onSubmit={handleSubmit}>
         <div>
           <div className="mb-2 block">
             <Label
@@ -77,17 +79,20 @@ console.log(formData)
             />
           </div>
           <TextInput
+            onChange={handleChange}
             id="time"
+            name='time'
+            value={formData.time}
             placeholder="What Time?"
             required={true}
           />
         </div>
-        
         <div className="w-full">
-          <Button onSubmit={handleCreate}>
+          <Button type='submit'>
             Create +
           </Button>
         </div>
+        </form>
       </div>
     </Modal.Body>
   </Modal>
