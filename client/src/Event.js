@@ -1,7 +1,10 @@
 import React from 'react'
 
 function Event({event}) {
-    console.log(event)
+
+    function handleDelete(){
+        console.log('delete fetch here')
+    }
   return (
     <div>
          <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
@@ -18,8 +21,8 @@ function Event({event}) {
                 event.time
             </td>
            
-            <td class="py-4 px-6 text-right">
-                <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
+            <td onClick={handleDelete} class="py-4 px-6 text-right">
+                <a href="#" class="font-medium text-blue-600 dark:text-red-500 hover:underline"> x </a>
             </td>
        
         </tr>
