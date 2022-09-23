@@ -1,19 +1,15 @@
 import React from 'react'
 import {useHistory} from 'react-router-dom'
-import {Button, onClick,onClose,Label,TextInput,Checkbox, Modal} from 'flowbite-react'
+import {Button,Label,TextInput,Checkbox, Modal} from 'flowbite-react'
 
 function EventForm() {
 let history = useHistory()
 
-function onClick(){
-    console.log('astgst')
-}
+
 function handleCreate(){
     console.log('post')
 }
-function onClose(){
-    console.log('aetga')
-}
+
 function handleGoBack(){
     history.goBack()
 }
@@ -23,7 +19,6 @@ function handleGoBack(){
     show={true}
     size="md"
     popup={true}
-    onClose={onClose}
   >
     <Modal.Header onClick = {handleGoBack}/>
     <Modal.Body >
