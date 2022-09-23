@@ -37,7 +37,7 @@ rounded={true}
     src={snowflake} alt='' width='30px' onClick={handleClick}
   />
   <span className="self-center whitespace-nowrap text-xl font-semibold dark:text-white"onClick={handleClick}>
-          Powder Planner
+          Mountain Meetup
   </span>
 </Navbar.Brand>
 <div className="flex md:order-2">
