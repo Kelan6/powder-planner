@@ -14,8 +14,7 @@ function Planner({currentUser, setCurrentUser}) {
         console.log(events)
       });
   }, []);
-
-
+  
   function handleAddClick(){
     console.log('this is where we POST event')
   }
