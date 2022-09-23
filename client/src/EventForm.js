@@ -24,8 +24,15 @@ fetch("/events", {
     },
     body: JSON.stringify(formDataBody)
 })
-.then(res => res.json)
+.then(res => res.json())
 .then(data=> console.log(data))
+setFormData({
+    name: '',
+    mountain_id:'',
+    user_id: currentUser.id,
+    time: ''
+})
+history.push('./planner')
 }
 
 function handleGoBack(){
