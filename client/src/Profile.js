@@ -17,38 +17,10 @@ function handleHomeClick(){
 }
 
   return (
-    <div className=" flex justify-center">
+    <div className=" pt-6 flex justify-center">
   <Card>
-    <div className="flex justify-end px-4 pt-4">
-      <Dropdown
-        inline={true}
-        label=""
-      >
-        <Dropdown.Item>
-          <a
-            href="#"
-            className="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-600 dark:hover:text-white"
-          >
-            Edit
-          </a>
-        </Dropdown.Item>
-        <Dropdown.Item>
-          <a
-            href="#"
-            className="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-600 dark:hover:text-white"
-          >
-            Export Data
-          </a>
-        </Dropdown.Item>
-        <Dropdown.Item>
-          <a
-            href="#"
-            className="block py-2 px-4 text-sm text-red-600 hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-600 dark:hover:text-white"
-          >
-            Delete
-          </a>
-        </Dropdown.Item>
-      </Dropdown>
+    <div className="  w-96 flex justify-end px-4 pt-4">
+      
     </div>
     <div className="flex flex-col items-center pb-10">
       <img

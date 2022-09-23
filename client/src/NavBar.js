@@ -28,7 +28,7 @@ function toProfile(){
 }
 
   return (
-<Navbar
+<Navbar 
 fluid={true}
 rounded={true}
 >
