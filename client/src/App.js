@@ -39,7 +39,7 @@ function App() {
             <Home />
           </Route>
           <Route exact path="/planner">
-            <Planner setCurrentUser={setCurrentUser} currentUser={currentUser} />
+            <Planner  currentUser={currentUser} />
           </Route>
           <Route path="/login">
             <Login setCurrentUser={setCurrentUser}setLoggedIn={setLoggedIn}/>

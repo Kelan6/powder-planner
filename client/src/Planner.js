@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react'
-import {Table} from 'flowbite-react'
+
 import Event from './Event'
 
 
@@ -18,9 +18,8 @@ function Planner({currentUser, setCurrentUser}) {
   function handleAddClick(){
     console.log('this is where we POST event')
   }
-  function handleEdit(){
-    console.log('this is where we PATCH event')
-  }
+
+console.log(currentUser)
 
   let eventsArr = events.map((event)=> {
     return <Event key={event.id} event={event}/>
@@ -68,7 +67,7 @@ function Planner({currentUser, setCurrentUser}) {
             <button className= 'flex justify-center' onClick={handleAddClick}> + </button>
         </tbody> */}
     </table>
-   
+   <button onClick={handleAddClick} className ='flex justify-center'> + </button>
 </div>
   )
 }
