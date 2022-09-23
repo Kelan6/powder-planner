@@ -22,9 +22,11 @@ let history = useHistory()
   }
 
   let eventsArr = events.map((event)=> {
-    return <Event key={event.id} event={event}/>
+    return <Event key={event.id} event={event} setEvents={setEvents}/> 
+
   })
   
+
 
   return (
     <div class="relative shadow-md sm:rounded-lg">

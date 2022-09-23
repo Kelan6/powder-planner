@@ -1,11 +1,21 @@
 import React from 'react'
 
 
-function Event({event}) {
 
+function Event({event, setEvents}) {
+
+
+
+console.log(event)
 
     function handleDelete(){
-        console.log('delete fetch here')
+        fetch(`/events/${event.id}`, {
+            method: "DELETE"
+        })
+        .then(res=>res.json())
+        .then((data) => {
+            setEvents(data);
+          })
     }
     
       function handleEdit(){
