@@ -1,6 +1,7 @@
 import React from 'react'
 
 function Event({event}) {
+    console.log(event)
   return (
     <div>
          <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
@@ -8,10 +9,10 @@ function Event({event}) {
                 {event.name}
             </th>
             <td class="py-4 px-6">
-                {event.mountain_id}
+                {event.mountain.title}
             </td>
             <td class="py-4 px-6">
-                {event.user_id}
+                {event.user.name}
             </td>
             <td class="py-4 px-6">
                 event.time

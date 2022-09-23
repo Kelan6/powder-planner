@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import {Table} from 'flowbite-react'
+import Event from './Event'
 
 
 function Planner({currentUser, setCurrentUser}) {
@@ -11,7 +12,6 @@ function Planner({currentUser, setCurrentUser}) {
       .then((res) => res.json())
       .then((events) => {
         setEvents(events);
-        console.log(events)
       });
   }, []);
   
@@ -21,6 +21,10 @@ function Planner({currentUser, setCurrentUser}) {
   function handleEdit(){
     console.log('this is where we PATCH event')
   }
+
+  let eventsArr = events.map((event)=> {
+    return <Event key={event.id} event={event}/>
+  })
 
   return (
     <div class="relative shadow-md sm:rounded-lg">
@@ -34,14 +38,14 @@ function Planner({currentUser, setCurrentUser}) {
                     Mountain
                 </th>
                 <th scope="col" class="py-3 px-6">
-                    Lift
+                    Friend
                 </th>
                 <th scope="col" class="py-3 px-6">
                     TIME
                 </th>
             </tr>
-        </thead>
-        <tbody>
+        </thead> {eventsArr}
+        {/* <tbody> 
             <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
                 <th scope="row" class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                     
@@ -62,7 +66,7 @@ function Planner({currentUser, setCurrentUser}) {
            
             </tr>
             <button className= 'flex justify-center' onClick={handleAddClick}> + </button>
-        </tbody>
+        </tbody> */}
     </table>
    
 </div>
