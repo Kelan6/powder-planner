@@ -9,9 +9,9 @@ Mountain.create(title: 'Crested Butte', address: '12 Snowmass Rd, Crested Butte,
 
 
 #Events
-Event.create(user_id: 1, mountain_id: 2, name: 'Shred Schoolmarm')
-Event.create(user_id: 2, mountain_id: 1, name: 'Meet me at Peak 6')
-Event.create(user_id: 1, mountain_id: 3, name: 'See ya on Painter Boy')
+Event.create(user_id: 1, mountain_id: 2, name: 'Shred Schoolmarm', time: '12:30')
+Event.create(user_id: 2, mountain_id: 1, name: 'Meet me at Peak 6', time: '12:30')
+Event.create(user_id: 1, mountain_id: 3, name: 'See ya on Painter Boy',time: '12:30')
 
 #Lifts
 Lift.create(title: 'River Run Gondola', mountain_id: 1)

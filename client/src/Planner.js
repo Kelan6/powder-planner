@@ -19,11 +19,10 @@ function Planner({currentUser, setCurrentUser}) {
     console.log('this is where we POST event')
   }
 
-console.log(currentUser)
-
   let eventsArr = events.map((event)=> {
     return <Event key={event.id} event={event}/>
   })
+  
 
   return (
     <div class="relative shadow-md sm:rounded-lg">

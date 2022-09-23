@@ -31,6 +31,6 @@ class EventsController < ApplicationController
   end
 
   def event_params
-    params.permit(:user_id, :mountain_id, :name)
+    params.permit(:user_id, :mountain_id, :name, :time)
   end
 end

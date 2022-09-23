@@ -3,6 +3,8 @@ import React from 'react'
 
 function Event({event}) {
 
+    console.log(event)
+
     function handleDelete(){
         console.log('delete fetch here')
     }
@@ -10,7 +12,7 @@ function Event({event}) {
       function handleEdit(){
         console.log('this is where we PATCH event')
       }
-      
+
   return (
     <div>
          <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
@@ -23,8 +25,8 @@ function Event({event}) {
             <td class="py-4 px-6">
                 {event.user.name}
             </td>
-            <td class="py-4 px-6">
-                event.time
+            <td class="text-white py-4 px-6">
+                {event.time}
             </td>
             <td onClick = {handleEdit} className="font-medium text-blue-600 hover:underline dark:text-blue-500">
                 Edit
