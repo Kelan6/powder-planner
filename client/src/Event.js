@@ -3,7 +3,6 @@ import React from 'react'
 
 function Event({event}) {
 
-    console.log(event)
 
     function handleDelete(){
         console.log('delete fetch here')

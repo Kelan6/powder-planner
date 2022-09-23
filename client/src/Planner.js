@@ -1,10 +1,11 @@
 import React, {useState, useEffect} from 'react'
+import {useHistory} from 'react-router-dom'
 
 import Event from './Event'
 
 
 function Planner({currentUser, setCurrentUser}) {
-
+let history = useHistory()
   const [events, setEvents] = useState([]);
 
   useEffect(() => {
@@ -16,7 +17,8 @@ function Planner({currentUser, setCurrentUser}) {
   }, []);
   
   function handleAddClick(){
-    console.log('this is where we POST event')
+    history.push('./add')
+
   }
 
   let eventsArr = events.map((event)=> {
@@ -43,30 +45,8 @@ function Planner({currentUser, setCurrentUser}) {
                 </th>
             </tr>
         </thead> {eventsArr}
-        {/* <tbody> 
-            <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-                <th scope="row" class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                    
-                </th>
-                <td class="py-4 px-6">
-                    mountain.name
-                </td>
-                <td class="py-4 px-6">
-                    lift.name
-                </td>
-                <td class="py-4 px-6">
-                    event.time
-                </td>
-               
-                <td class="py-4 px-6 text-right">
-                    <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline" onClick={handleEdit}>Edit</a>
-                </td>
-           
-            </tr>
-            <button className= 'flex justify-center' onClick={handleAddClick}> + </button>
-        </tbody> */}
     </table>
-   <button onClick={handleAddClick} className ='flex justify-center'> + </button>
+   <button onClick={handleAddClick}> + </button>
 </div>
   )
 }
