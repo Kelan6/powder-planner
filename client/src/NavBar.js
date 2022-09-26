@@ -36,7 +36,7 @@ rounded={true}
   <img
     src={snowflake} alt='' width='30px' onClick={handleClick}
   />
-  <span className="self-center whitespace-nowrap text-xl font-semibold dark:text-white"onClick={handleClick}>
+  <span className="pl-2 self-center whitespace-nowrap text-xl font-semibold dark:text-white"onClick={handleClick}>
           Mountain Meetup
   </span>
 </Navbar.Brand>

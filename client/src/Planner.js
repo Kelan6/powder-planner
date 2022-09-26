@@ -53,7 +53,8 @@ function onRemoveEvent(removedEvent){
                     Time
                 </th>
             </tr>
-        </thead> {eventsArr}
+        </thead>
+        {eventsArr}
     </table>
    <button onClick={handleAddClick}> + </button>
 </div>
