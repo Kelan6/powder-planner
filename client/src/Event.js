@@ -37,10 +37,6 @@ console.log(event)
             <td class="text-white py-4 px-6">
                 {event.time}
             </td>
-            <td onClick = {handleEdit} className="font-medium text-blue-600 hover:underline dark:text-blue-500">
-                Edit
-            </td>
-           
             <td onClick={handleDelete} class="py-4 px-6 text-right">
                 <a href="#" class="font-medium text-blue-600 dark:text-red-500 hover:underline"> x </a>
             </td>

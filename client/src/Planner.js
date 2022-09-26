@@ -43,7 +43,7 @@ let history = useHistory()
                     Friend
                 </th>
                 <th scope="col" class="py-3 px-6">
-                    TIME
+                    Time
                 </th>
             </tr>
         </thead> {eventsArr}
