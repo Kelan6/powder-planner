@@ -1,7 +1,7 @@
 import React from 'react'
 
-function Mountains() {
-
+function Mountains({mountains}) {
+console.log(mountains)
   return (
     <div>  This is the mountains page with links to every mountains <br/>
       
