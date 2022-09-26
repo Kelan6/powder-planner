@@ -104,11 +104,11 @@ function handleChange(e){
             required={true}
           />
         </div>
-        <div className="w-full">
-          <Button type='submit'>
-            Create +
-          </Button>
-        </div>
+        <div className="flex flex-wrap gap-2 mt-3">
+  <Button type='submit' gradientDuoTone="purpleToBlue">
+    Create +
+  </Button>
+  </div>
         </form>
       </div>
     </Modal.Body>

@@ -15,7 +15,7 @@ function handleProfileClick(){
 function handleHomeClick(){
   history.push('./add')
 }
-
+console.log(currentUser)
   return (
     <div className=" pt-6 flex justify-center">
   <Card>
@@ -33,6 +33,8 @@ function handleHomeClick(){
       </h5>
       <span className="text-sm text-gray-500 dark:text-gray-400">
         {currentUser.email}
+      </span>
+      <span className="text-sm text-gray-500 dark:text-gray-400">
       </span>
       <div  className="mt-4 flex space-x-3 lg:mt-6">
         <a onClick = {handleProfileClick}
