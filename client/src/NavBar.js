@@ -2,7 +2,6 @@ import React from 'react'
 import {useHistory, Link} from 'react-router-dom'
 import { Navbar, Dropdown, Avatar } from 'flowbite-react'
 import snowflake from './assets/snowflake.png'
-import menu from './assets/menu.png'
 
 function NavBar({ currentUser,setCurrentUser, loggedIn, setLoggedIn}) {
 
@@ -46,14 +45,21 @@ rounded={true}
     inline={true}
     label={<Avatar alt="User settings" img="" rounded={true}/>}
   >
-    <Dropdown.Header>
+    {loggedIn ?
+    (<Dropdown.Header>
       <span className="block text-sm">
         {currentUser.name}
       </span>
       <span className="block truncate text-sm font-medium">
         {currentUser.email}
       </span>
-    </Dropdown.Header>
+    </Dropdown.Header>)
+    :
+    (<Dropdown.Header>
+      <span className="block text-sm">
+        Please Login
+      </span>
+    </Dropdown.Header>)}
     <Dropdown.Item onClick={toProfile}>Profile
     </Dropdown.Item>
     <Dropdown.Item>

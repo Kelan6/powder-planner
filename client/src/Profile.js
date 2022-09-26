@@ -13,7 +13,7 @@ function handleProfileClick(){
 }
 
 function handleHomeClick(){
-  history.push('./add')
+  history.push('./planner')
 }
 console.log(currentUser)
   return (
