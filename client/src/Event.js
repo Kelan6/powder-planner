@@ -14,21 +14,18 @@ function Event({event}) {
 
   return (
     <div>
-         <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-            <th scope="row" class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+         <tr>
+            <td>
                 {event.name}
-            </th>
-            <td class="py-4 px-6">
+            </td>
+            <td>
                 {event.mountain.title}
             </td>
-            <td class="py-4 px-6">
+            <td>
                 {event.user.name}
             </td>
-            <td class="text-white py-4 px-6">
+            <td>
                 {event.time}
-            </td>
-            <td onClick = {handleEdit} className="font-medium text-blue-600 hover:underline dark:text-blue-500">
-                Edit
             </td>
            
             <td onClick={handleDelete} class="py-4 px-6 text-right">

@@ -1,11 +1,11 @@
-import React, {useState, useEffect} from 'react'
-import {useHistory} from 'react-router-dom'
+import React, { useState, useEffect } from 'react'
+import { useHistory } from 'react-router-dom'
 
 import Event from './Event'
 
 
-function Planner({currentUser, setCurrentUser}) {
-let history = useHistory()
+function Planner({ currentUser, setCurrentUser }) {
+  let history = useHistory()
   const [events, setEvents] = useState([]);
 
   useEffect(() => {
@@ -15,39 +15,53 @@ let history = useHistory()
         setEvents(events);
       });
   }, []);
-  
-  function handleAddClick(){
+
+  function handleAddClick() {
     history.push('./add')
 
   }
 
-  let eventsArr = events.map((event)=> {
-    return <Event key={event.id} event={event}/>
+  let eventsArr = events.map((event) => {
+    return (<tr>
+      <td>
+        {event.name}
+      </td>
+      <td>
+        {event.mountain.title}
+      </td>
+      <td>
+        {event.user.name}
+      </td>
+      <td>
+        {event.time}
+      </td>
+
+      <td class="py-4 px-6 text-right">
+        <a href="#" class="font-medium text-blue-600 dark:text-red-500 hover:underline"> x </a>
+      </td>
+
+    </tr>
+    )
   })
-  
+
 
   return (
-    <div class="relative shadow-md sm:rounded-lg">
-    <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400 pt-10px">
-        <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
-            <tr>
-                <th scope="col" class="py-3 px-6">
-                    Meet Up Description
-                </th>
-                <th scope="col" class="py-3 px-6">
-                    Mountain
-                </th>
-                <th scope="col" class="py-3 px-6">
-                    Friend
-                </th>
-                <th scope="col" class="py-3 px-6">
-                    TIME
-                </th>
-            </tr>
-        </thead> {eventsArr}
-    </table>
-   <button onClick={handleAddClick}> + </button>
-</div>
+    <div>
+      <table className="table-auto">
+        <thead>
+          <tr>
+            <th>Meet Up Description</th>
+            <th>Mountain</th>
+            <th>User</th>
+            <th>Time</th>
+          </tr>
+        </thead>
+        <tbody>
+          {eventsArr}
+        </tbody>
+      </table>
+      <button onClick={handleAddClick}> + </button>
+    </div>
   )
 }
 
