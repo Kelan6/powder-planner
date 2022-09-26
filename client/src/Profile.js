@@ -1,10 +1,13 @@
-import React from 'react'
+import React, {useState} from 'react'
 import {useHistory} from 'react-router-dom'
 import {Card, Dropdown} from 'flowbite-react'
 import snowflake from './assets/snowflake.png'
 
 function Profile({currentUser, setCurrentUser}) {
   
+
+
+
 let history = useHistory()
 
 function handleProfileClick(){
@@ -34,8 +37,9 @@ console.log(currentUser)
       <span className="text-sm text-gray-500 dark:text-gray-400">
         {currentUser.email}
       </span>
-      <span className="text-sm text-gray-500 dark:text-gray-400">
-      </span>
+      <div className="text-sm text-gray-500 dark:text-gray-400">
+      {currentUser.snowboarder ? <div>🏂</div> : <div>⛷</div>}
+      </div>
       <div  className="mt-4 flex space-x-3 lg:mt-6">
         <a onClick = {handleProfileClick}
           href="#"
