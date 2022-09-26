@@ -9,7 +9,7 @@ let history = useHistory()
 
 function handleProfileClick(){
   console.log('patch for profile')
-  // redirect to modal?
+  history.push('./update')
 }
 
 function handleHomeClick(){

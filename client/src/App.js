@@ -10,6 +10,7 @@ import Mountains from './Mountains'
 import About from './About'
 import Profile from './Profile'
 import EventForm from './EventForm';
+import ProfileForm from './ProfileForm'
 
 function App() {
   
@@ -59,6 +60,9 @@ function App() {
           </Route>
           <Route path="/add">
             <EventForm currentUser={currentUser} setCurrentUser={setCurrentUser}/>
+          </Route>
+          <Route path="/update">
+            <ProfileForm currentUser={currentUser} setCurrentUser={setCurrentUser}/>
           </Route>
         </Switch>
       </div>
