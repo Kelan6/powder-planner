@@ -20,9 +20,16 @@ let history = useHistory()
     history.push('./add')
 
   }
+function onRemoveEvent(removedEvent){
+  fetch(`/events/${removedEvent.id}`, {
+    method: "DELETE"
+})
+.then(res=>res.json())
+.then( setEvents(events.filter(ev => ev.id !== removedEvent.id)))
+}
 
   let eventsArr = events.map((event)=> {
-    return <Event key={event.id} event={event} setEvents={setEvents}/> 
+    return <Event key={event.id} event={event} onRemoveEvent={onRemoveEvent}/> 
 
   })
   

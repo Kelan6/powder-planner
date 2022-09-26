@@ -1,26 +1,13 @@
-import React from 'react'
+import React,{useState} from 'react'
 
 
 
-function Event({event, setEvents}) {
+function Event({event, onRemoveEvent}) {
 
-
-
-console.log(event)
-
-    function handleDelete(){
-        fetch(`/events/${event.id}`, {
-            method: "DELETE"
-        })
-        .then(res=>res.json())
-        .then((data) => {
-            setEvents(data);
-          })
-    }
     
-      function handleEdit(){
-        console.log('this is where we PATCH event')
-      }
+    function handleDelete(){
+       onRemoveEvent(event)
+    }
 
   return (
     <div>
