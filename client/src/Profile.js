@@ -37,8 +37,8 @@ console.log(currentUser)
       <span className="text-sm text-gray-500 dark:text-gray-400">
         {currentUser.email}
       </span>
-      <div className="text-sm text-gray-500 dark:text-gray-400">
-      {currentUser.snowboarder ? <div>🏂</div> : <div>⛷</div>}
+      <div className='mt-3'>
+      {currentUser.snowboarder ? <div>🏂 </div> : <div> ⛷ </div>}
       </div>
       <div  className="mt-4 flex space-x-3 lg:mt-6">
         <a onClick = {handleProfileClick}
