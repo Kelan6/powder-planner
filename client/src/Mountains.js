@@ -1,16 +1,29 @@
-import React from 'react'
+import React,{useState,useEffect} from 'react'
+import MountainCard from './MountainCard'
 
-function Mountains({mountains}) {
-console.log(mountains)
-  return (
-    <div>  This is the mountains page with links to every mountains <br/>
+function Mountains() {
+
+  const [mountains, setMountains] = useState([])
+
+  useEffect(() => {
+    fetch("/mountains")
+      .then((res) => res.json())
+      .then((data) => {
+        setMountains(data);
+        console.log(mountains)
+      });
       
-<a className='mount-links' href='https://www.keystoneresort.com/-/aemasset/sitecore/keystone/maps/KEY_22-23_Winter-Trail-Map-Web_FINAL.pdf' target="_blank">KEYSTONE</a>
-<br/>
-<a className='mount-links' href='https://www.breckenridge.com/-/media/breckenridge/files/breck-new-trail-map-winter-18_19-converted.ashx' target="_blank">BRECKENRIDGE</a>
-<br/>
-<a className='mount-links' href='https://www.skicb.com/-/aemasset/sitecore/crested-butte/maps/20211124_CB_trail_map_002.pdf' target="_blank">CRESTED BUTTE</a>
+  }, []);
 
+
+const mountsArr = mountains.map((mountain)=> {
+  return <MountainCard key={mountain.id} mountain={mountain}/>
+})
+
+
+  return (
+    <div>  
+      {mountsArr}
     </div>
   )
 }

@@ -16,7 +16,7 @@ function App() {
   
   const [currentUser, setCurrentUser] = useState({})
   const [loggedIn, setLoggedIn] = useState(false)
-  const [mountains, setMountains] = useState({})
+
 
 
   useEffect(() => {
@@ -32,14 +32,6 @@ function App() {
       )
   }, loggedIn);
 
-  useEffect(() => {
-    fetch("/mountains")
-      .then((res) => res.json())
-      .then((data) => {
-        setMountains(data);
-      });
-      console.log(mountains)
-  }, []);
 
 
   return (
@@ -60,7 +52,7 @@ function App() {
             <Signup setCurrentUser={setCurrentUser} setLoggedIn={setLoggedIn}/>
           </Route>
           <Route path="/mountains">
-            <Mountains mountains={mountains}/>
+            <Mountains />
           </Route>
           <Route path="/about">
             <About/>
