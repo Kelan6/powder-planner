@@ -1,29 +1,63 @@
 import React from 'react'
-import {Card,Dropdown} from 'flowbite-react'
+import { Card, Dropdown, Avatar } from 'flowbite-react'
+import k1 from './assets/k1.png'
 
 function MountainCard({ mountain }) {
 
     console.log(mountain.lifts[0].title)
 
     return (
-        <Card className='pt-10px'href="#">
-  <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-    {mountain.title}
-  </h5>
-  <p className="font-normal text-gray-700 dark:text-gray-400">
-    {mountain.address}
-  </p>
-  <p className="font-normal text-gray-700 dark:text-gray-400">
-    {mountain.elevation},000 ft
-  </p>
-  <p className="font-normal text-gray-700 dark:text-gray-400">
-  </p>
-  <Dropdown label="Lifts">
-  <Dropdown.Item>
-    {mountain.lifts[0].title}
-  </Dropdown.Item>
-</Dropdown>
-</Card>
+        <Card className='pt-10px' href="#">
+
+            <img class="max-w-lg h-auto" src={k1} alt="image description"/>
+
+                <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                    {mountain.title}
+                </h5>
+                <p className="font-normal text-gray-700 dark:text-gray-400">
+                    {mountain.address}
+                </p>
+                <p className="font-normal text-gray-700 dark:text-gray-400">
+                    {mountain.elevation},000 ft
+                </p>
+                <p className="font-normal text-gray-700 dark:text-gray-400">
+                </p>
+                <Dropdown label="Lifts">
+                    <Dropdown.Item>
+                        {mountain.lifts[0].title}
+                    </Dropdown.Item>
+                    <Dropdown.Item >
+                        {mountain.lifts[1].title}
+                    </Dropdown.Item>
+                    <Dropdown.Item>
+                        {mountain.lifts[2].title}
+                    </Dropdown.Item>
+                    <Dropdown.Item>
+                        {mountain.lifts[3].title}
+                    </Dropdown.Item>
+                    <Dropdown.Item>
+                        {mountain.lifts[4].title}
+                    </Dropdown.Item>
+                    <Dropdown.Item>
+                        {mountain.lifts[5].title}
+                    </Dropdown.Item>
+                    <Dropdown.Item>
+                        {mountain.lifts[6].title}
+                    </Dropdown.Item>
+                    <Dropdown.Item>
+                        {mountain.lifts[7].title}
+                    </Dropdown.Item>
+                    <Dropdown.Item>
+                        {mountain.lifts[8].title}
+                    </Dropdown.Item>
+                    <Dropdown.Item>
+                        {mountain.lifts[9].title}
+                    </Dropdown.Item>
+                    <Dropdown.Item>
+                        {mountain.lifts[10].title}
+                    </Dropdown.Item>
+                </Dropdown>
+        </Card>
     )
 }
 
