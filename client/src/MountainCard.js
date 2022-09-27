@@ -4,12 +4,12 @@ import k1 from './assets/k1.png'
 
 function MountainCard({ mountain }) {
 
-    console.log(mountain.lifts[0].title)
+    console.log(mountain)
 
     return (
         <Card className='pt-10px' href="#">
 
-            <img class="max-w-lg h-auto" src={k1} alt="image description"/>
+            <img class="max-w-lg h-auto" src={mountain.image} alt="image description"/>
 
                 <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
                     {mountain.title}
@@ -18,7 +18,10 @@ function MountainCard({ mountain }) {
                     {mountain.address}
                 </p>
                 <p className="font-normal text-gray-700 dark:text-gray-400">
-                    {mountain.elevation},000 ft
+                    {mountain.description}
+                </p>
+                <p className="font-normal text-gray-700 dark:text-gray-400">
+                    Mountain Elevation: {mountain.elevation}
                 </p>
                 <p className="font-normal text-gray-700 dark:text-gray-400">
                 </p>
