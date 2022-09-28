@@ -7,7 +7,7 @@ function EventForm({ currentUser, mounts }) {
   const [keystoneMounts, setKeystoneMounts] = useState(mounts[0].lifts)
   const [breckMounts, setBreckMounts] = useState(mounts[1].lifts)
   const [butteMounts, setButteMounts] = useState(mounts[2].lifts)
-  const [liftMount, setLiftMount] = useState("keystoneMounts")
+  // const [liftMount, setLiftMount] = useState("keystoneMounts")
 
   let history = useHistory()
 
@@ -39,9 +39,11 @@ function EventForm({ currentUser, mounts }) {
     setFormData({
       name: '',
       mountain_id: '',
+      lift_id: '',
       user_id: currentUser.id,
       time: ''
     })
+    console.log(formDataBody)
     history.push('./planner')
   }
 
@@ -51,26 +53,27 @@ function EventForm({ currentUser, mounts }) {
 
   function handleChange(e) {
     setFormData({ ...formData, [e.target.name]: e.target.value })
-    handleMountainChange(e.target.value)
+    console.log(formData)
+    // handleMountainChange(e.target.value)
   }
 
-  function handleMountainChange(mountain) {
-    console.log(mountain)
+  // function handleMountainChange(mountain) {
+  //   console.log(mountain)
 
-    if (mountain === "1") {
-      setLiftMount("keystoneMounts")
-      //fetch first custom route, then set state, then map (outside this function)
-    } else if (mountain === "2") {
-      //fetch second custom route, then set state, then map (outside this function)
-      setLiftMount("breckMounts")
-    } else if (mountain === "3") {
-      //fetch third custom route, then set state, then map (outside this function)
-      setLiftMount("butteMounts")
-    }
-    else {
-      setLiftMount("keystoneMounts")
-    }
-  }
+  //   if (mountain === "1") {
+  //     setLiftMount("keystoneMounts")
+  //     //fetch first custom route, then set state, then map (outside this function)
+  //   } else if (mountain === "2") {
+  //     //fetch second custom route, then set state, then map (outside this function)
+  //     setLiftMount("breckMounts")
+  //   } else if (mountain === "3") {
+  //     //fetch third custom route, then set state, then map (outside this function)
+  //     setLiftMount("butteMounts")
+  //   }
+  //   else {
+  //     setLiftMount("keystoneMounts")
+  //   }
+  // }
 
   const km = keystoneMounts.map((lift) => {
     return <option value={lift.id}>{lift.title}</option>
@@ -130,7 +133,7 @@ function EventForm({ currentUser, mounts }) {
                   <option value="3"> Crested Butte </option>
                 </select>
                 <label for="lifts" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">Select an Lift </label>
-                <select name='lift_id' onChange={handleChange} id="lifts" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                <select name='lift' onChange={handleChange} id="lifts" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                   <option selected>Choose a Lift</option>
                   {/* {liftMount === "keystoneMounts" ?
                   {km}
@@ -143,7 +146,8 @@ function EventForm({ currentUser, mounts }) {
                   <></>
                 } */}
                   
-                  {km}{bm}{cm}
+                  {km}
+                  {bm}{cm}
                   {/* <option value="1">mountain_id.first.title</option>
   <option value="2"> mountain_id.second.title </option>
   <option value="3"> mountain_id.third.title </option> */}

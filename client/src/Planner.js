@@ -36,7 +36,7 @@ function Planner({ currentUser, setCurrentUser }) {
         {event.mountain.title}
       </td>
       <td class="py-4 px-6">
-        {event.mountain.lifts}
+        {event.lift.title}
       </td>
       <td class="py-4 px-6">
         {event.user.name}
