@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 import { useHistory } from 'react-router-dom'
 import { Button, Label, TextInput, Modal, Checkbox } from 'flowbite-react'
 
@@ -12,24 +12,25 @@ function ProfileForm({ currentUser, setCurrentUser }) {
     name: "",
     email: "",
     password: "",
-    snowboarder: '',
-});
+    snowboarder: "",
+  });
 
   function handleInputChange(e) {
+    e.preventDefault()
     setFormData({ ...formData, [e.target.name]: e.target.value });
-}
+  }
 
 
   function handleSubmit(e) {
     e.preventDefault();
     fetch(`/users/${currentUser.id}`, {
-        method: "PATCH",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
+      method: "PATCH",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(formData),
     })
-        .then((res) => res.json())
-        .then((data) => setCurrentUser(data));
-}
+      .then((res) => res.json())
+      .then((data) => setCurrentUser(data));
+  }
 
 
   return (
@@ -97,7 +98,7 @@ function ProfileForm({ currentUser, setCurrentUser }) {
               <span className="ml-3 text-sm font-medium text-gray-900 dark:text-gray-300">Snowboarder</span>
             </label>
             <div className="flex flex-wrap gap-2 mt-3">
-              <Button type='submit'gradientDuoTone="purpleToBlue">
+              <Button type='submit' gradientDuoTone="purpleToBlue">
                 Update Profile
               </Button>
             </div>
