@@ -18,8 +18,11 @@ function handleHomeClick(){
   history.push('./planner')
 }
 
+console.log(currentUser.events)
+
   return (
-    <div className=" pt-6 flex justify-center">
+    <div className='flex flex-col items-center pt-4'>
+      
   <Card>
     <div className="  w-96 flex justify-end px-4 pt-4">
       
@@ -55,6 +58,7 @@ function handleHomeClick(){
       </div>
     </div>
   </Card>
+  <div> </div>
 </div>
   )
 }
