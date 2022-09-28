@@ -38,7 +38,7 @@ console.log(currentUser)
         {currentUser.email}
       </span>
       <div className='mt-3'>
-      {currentUser.snowboarder ? <div>🏂 </div> : <div> ⛷ </div>}
+      {currentUser.snowboarder ? <div> 🏂 </div> : <div> ⛷ </div>}
       </div>
       <div  className="mt-4 flex space-x-3 lg:mt-6">
         <a onClick = {handleProfileClick}
