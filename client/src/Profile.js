@@ -23,7 +23,7 @@ console.log(currentUser.events)
   return (
     <div className='flex flex-col items-center pt-4'>
       
-  <Card>
+  <Card className='flex'>
     <div className="  w-96 flex justify-end px-4 pt-4">
       
     </div>
@@ -58,7 +58,8 @@ console.log(currentUser.events)
       </div>
     </div>
   </Card>
-  <div> </div>
+  <div> 
+  </div>
 </div>
   )
 }
