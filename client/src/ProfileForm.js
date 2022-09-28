@@ -97,12 +97,14 @@ console.log(formData)
                   value="Change your Password"
                 />
               </div>
+              <div className="mb-2 block">
               <TextInput
                 name="password"
                 type='password'
                 required={true}
                 onChange={handleInputChange}
               />
+              </div>
             </div>
             <span className=" mb-6 text-sm font-medium text-gray-900 dark:text-gray-300">Skier</span>
             <label for="default-toggle" className="inline-flex relative items-center cursor-pointer">
