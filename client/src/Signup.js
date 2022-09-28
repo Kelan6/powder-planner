@@ -21,7 +21,6 @@ function Signup({ setCurrentUser, setLoggedIn }) {
   function handleChange(e) {
     const { name, value, type, checked } = e.target;
     setFormData({ ...formData, [name]: type === 'checkbox' ? checked : value });
-    console.log(formData)
   }
 
   function handleSubmit(e) {
@@ -88,40 +87,3 @@ function Signup({ setCurrentUser, setLoggedIn }) {
 
 export default Signup;
 
-{/* <div className="form-box">
-      <div className="login-box">
-        <h1>Signup</h1>
-        <div className="form-container">
-          <form className="login-signup-form" onSubmit={handleSubmit}>
-            <section className="input-form">
-              <label>Name:</label>
-              <input
-                type="text"
-                name="name"
-                value={name}
-                onChange={handleChange}
-                placeholder="  Enter Name">
-              </input>
-            </section>
-            <section className="input-form">
-              <label>Email:</label>
-              <input type="text" name="email" value={email} onChange={handleChange} placeholder="  Enter Email" />
-            </section>
-            <section className="input-form">
-              <label>Password:</label>
-              <input
-                type="password"
-                name="password"
-                value={password}
-                onChange={handleChange}
-                placeholder="  Enter Password" />
-            </section>
-            <input name='snowboarder' value={snowboarder} onChange={handleChange} type="checkbox"/> <span> 🏂 snowboarder </span>
-            <section className="input-form">
-              <input className="lg-su-button" type="submit" value="Sign up!" />
-            </section>
-          </form>
-        </div>
-      </div>
-    </div>
-  ); */}

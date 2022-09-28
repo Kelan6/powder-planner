@@ -16,10 +16,9 @@ function ProfileForm({ currentUser, setCurrentUser }) {
   });
 
   function handleInputChange(e) {
-    e.preventDefault()
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+    const { name, value, type, checked } = e.target;
+    setFormData({ ...formData, [name]: type === 'checkbox' ? checked : value });
   }
-
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -27,9 +26,20 @@ function ProfileForm({ currentUser, setCurrentUser }) {
       method: "PATCH",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(formData),
-    })
-      .then((res) => res.json())
-      .then((data) => setCurrentUser(data));
+    }).then((res) => {
+      if (res.ok) {
+        res.json().then((formData) => {
+          setCurrentUser(formData);
+          history.push("/profile");
+        });
+      } else {
+        res.json().then((errors) => {
+          console.error(errors);
+        });
+      }
+    });
+      
+
   }
 
 
