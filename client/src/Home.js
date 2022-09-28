@@ -6,6 +6,7 @@ import gsd3 from './assets/gsd3.jpeg'
 import smb from './assets/smb.jpeg'
 import m1 from './assets/m1.jpeg'
 import sk1 from './assets/sk1.jpeg'
+import sb3 from './assets/sb3.avif'
 
 function Home() {
 
@@ -39,7 +40,7 @@ function Home() {
               <div class="flex flex-wrap w-1/2">
                 <div class="w-1/2 p-1 md:p-2">
                   <img alt="gallery" class="block object-cover object-center w-full h-full rounded-lg"
-                    src={pic2} />
+                    src={sb3} />
                 </div>
                 <div class="w-1/2 p-1 md:p-2">
                   <img alt="gallery" class="block object-cover object-center w-full h-full rounded-lg"
