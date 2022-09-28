@@ -90,7 +90,7 @@ rounded={true}
     Mountains
   </Navbar.Link>
   <Navbar.Link href="/planner">
-    Planner
+    Meetup +
   </Navbar.Link>
 </Navbar.Collapse>
 </Navbar>
