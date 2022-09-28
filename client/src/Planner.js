@@ -35,6 +35,9 @@ function Planner({ currentUser, setCurrentUser }) {
         {event.mountain.title}
       </td>
       <td class="py-4 px-6">
+        {event.mountain.lifts}
+      </td>
+      <td class="py-4 px-6">
         {event.user.name}
       </td>
       <td class="py-4 px-6">
@@ -58,6 +61,9 @@ function Planner({ currentUser, setCurrentUser }) {
             </th>
             <th scope="col" class="py-3 px-6">
               Mountain
+            </th>
+            <th scope="col" class="py-3 px-6">
+              Lift
             </th>
             <th scope="col" class="py-3 px-6">
               User
