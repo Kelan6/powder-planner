@@ -16,6 +16,7 @@ function App() {
   
   const [currentUser, setCurrentUser] = useState({})
   const [loggedIn, setLoggedIn] = useState(false)
+  const [mounts, setMounts] = useState([])
 
 
 
@@ -32,7 +33,15 @@ function App() {
       )
   }, loggedIn);
 
+  useEffect(() => {
+    fetch("/mountains")
+      .then((res) => res.json())
+      .then((data) => {
+        setMounts(data);
+      });
+  }, []);
 
+  
 
   return (
     <BrowserRouter>
@@ -43,7 +52,7 @@ function App() {
             <Home />
           </Route>
           <Route exact path="/planner">
-            <Planner  currentUser={currentUser} />
+            <Planner   currentUser={currentUser} />
           </Route>
           <Route path="/login">
             <Login setCurrentUser={setCurrentUser}setLoggedIn={setLoggedIn}/>
@@ -61,7 +70,7 @@ function App() {
             <Profile currentUser={currentUser} setCurrentUser={setCurrentUser}/>
           </Route>
           <Route path="/add">
-            <EventForm currentUser={currentUser} setCurrentUser={setCurrentUser}/>
+            <EventForm mounts={mounts} currentUser={currentUser} setCurrentUser={setCurrentUser}/>
           </Route>
           <Route path="/update">
             <ProfileForm currentUser={currentUser} setCurrentUser={setCurrentUser}/>
