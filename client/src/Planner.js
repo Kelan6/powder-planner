@@ -25,6 +25,7 @@ function Planner({ currentUser, setCurrentUser }) {
       .then(res => res.json())
       .then(setEvents(events.filter(ev => ev.id !== event.id)))
   }
+  
 
   let eventsArr = events.map((event) => {
     return (<tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
@@ -48,7 +49,7 @@ function Planner({ currentUser, setCurrentUser }) {
 
   })
 
-
+  
 
   return (
 
