@@ -6,9 +6,12 @@ function EventForm({currentUser}) {
 
 let history = useHistory()
 
+// const[currenMountain,setCurrentMountain] = useState({})
+
 const [formData, setFormData]=useState({
     name: '',
     mountain_id:'',
+    // lift_id: '',
     user_id: currentUser.id,
     time: ''
 })
@@ -41,7 +44,7 @@ function handleGoBack(){
 
 function handleChange(e){
     setFormData({...formData,[e.target.name]: e.target.value})
-    // handleMountainChange(e.target.value)
+    handleMountainChange(e.target.value)
 }
 
 function handleMountainChange(mountain){
@@ -55,8 +58,8 @@ function handleMountainChange(mountain){
 //   }
 // }
 
-//const lift = state.map((lift)=>{
-//return <option key={state.id} lift={lift})}
+// const liftOptions = mountain.lifts.map((lift)=>{
+// return <option value=`${lift.id}`)}
 
   return (
     <React.Fragment>
@@ -105,10 +108,7 @@ function handleMountainChange(mountain){
 <label for="lifts" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">Select an Lift </label>
 <select name='lift_id' onChange={handleChange}id="lifts" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
   <option selected>Choose a Lift</option>
-  <option value="1">mountain_id.first.title
-  {/* lift */}
-
-   </option>
+  <option value="1">mountain_id.first.title</option>
   <option value="2"> mountain_id.second.title </option>
   <option value="3"> mountain_id.third.title </option>
 </select>
