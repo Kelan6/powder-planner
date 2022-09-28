@@ -11,14 +11,13 @@ function Profile({currentUser, setCurrentUser}) {
 let history = useHistory()
 
 function handleProfileClick(){
-  console.log('patch for profile')
   history.push('./update')
 }
 
 function handleHomeClick(){
   history.push('./planner')
 }
-console.log(currentUser)
+
   return (
     <div className=" pt-6 flex justify-center">
   <Card>
