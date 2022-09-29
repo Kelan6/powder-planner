@@ -38,8 +38,9 @@ function Planner({ currentUser, setCurrentUser }) {
       <td class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white">
         {event.lift.title}
       </td>
-      <td class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+      <td class="flex py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white">
         {event.user.name}
+        {event.user.snowboarder ? <div> 🏂 </div> : <div> ⛷ </div>}
       </td>
       <td class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white">
         {event.time}
