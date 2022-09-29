@@ -5,9 +5,12 @@ function MountainCard({ mountain }) {
 
 
     return (
-        <Card className='w-2/3 pt-10px'>
-
+       
+        <Card className='flex flex-row pt-10'>
+            <div>
             <img class="max-w-lg h-auto" src={mountain.image} alt=''/>
+            </div>
+            <div className=' w-6/12'>
                 <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
                     {mountain.title}
                 </h5>
@@ -23,7 +26,7 @@ function MountainCard({ mountain }) {
                 <p className="font-normal text-gray-700 dark:text-gray-400">
                 </p>
                 <div> <a className='text-white hover:underline'  target='_blank' href={mountain.map}> Trail Map </a> </div>
-                <Dropdown label="Lifts">
+                <Dropdown className='mt-1' label="Lifts">
                     <Dropdown.Item >
                         {mountain.lifts[0].title}
                     </Dropdown.Item>
@@ -58,6 +61,7 @@ function MountainCard({ mountain }) {
                         {mountain.lifts[10].title}
                     </Dropdown.Item>
                 </Dropdown>
+                </div>
         </Card>
     )
 }
