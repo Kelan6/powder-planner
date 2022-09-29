@@ -13,7 +13,7 @@ function Home() {
   return (
     <div className='flex flex-col items-center'>
       <div className='text-white mt-10'>
-        <h1 className='font-serif text-8xl'>Welcome to Mountain Meetup</h1>
+        <h1 className='font-serif text-8xl'>Welcome to Mountain Meetup </h1>
         <div className='font-serif mt-10 flex justify-center'>
           <TypeAnimation
             sequence={[

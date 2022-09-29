@@ -44,7 +44,7 @@ function Planner({ currentUser, setCurrentUser }) {
       <td class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white">
         {event.time}
       </td>
-      <button onClick={() => onRemoveEvent(event)} type="button" class="py-2 px-3 mt-2 text-xs-red-700 hover:text-white border border-red-700 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-small rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:border-red-500 dark:text-red-500 dark:hover:text-white dark:hover:bg-red-600 dark:focus:ring-red-900">cancel</button>
+      <button onClick={() => onRemoveEvent(event)} type="button" class="mt-2 text-xs-red-700 hover:text-white border border-red-700 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-small rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:border-red-500 dark:text-red-500 dark:hover:text-white dark:hover:bg-red-600 dark:focus:ring-red-900">cancel</button>
       
     </tr>)
 
