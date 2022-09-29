@@ -2,6 +2,7 @@ import React, {useState} from 'react'
 import {useHistory} from 'react-router-dom'
 import {Card, Dropdown} from 'flowbite-react'
 import snowflake from './assets/snowflake.png'
+import './App.css'
 
 function Profile({currentUser, setCurrentUser}) {
   
@@ -21,7 +22,8 @@ function handleHomeClick(){
 console.log(currentUser.events)
 
   return (
-    <div className='flex flex-col items-center pt-4'>
+    <div className='background'>
+    <div className='flex flex-col items-center pt-12'>
       
   <Card className='flex'>
     <div className="  w-96 flex justify-end px-4 pt-4">
@@ -60,6 +62,7 @@ console.log(currentUser.events)
   </Card>
   <div> 
   </div>
+</div>
 </div>
   )
 }
