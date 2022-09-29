@@ -119,38 +119,24 @@ function EventForm({ currentUser, mounts }) {
                 />
               </div>
               <div>
-                <div className="mb-2 block">
+                <div className="mt-1 mb-2 block">
                   <Label
                     id='mountain'
                     value="Which Mountain 🏔"
                   />
                 </div>
-                <label for="mountains" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">Select an mountain</label>
-                <select name='mountain_id' onChange={handleChange} id="mountains" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                <label for="mountains" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400"></label>
+                <select name='mountain_id' onChange={handleChange} id="mountains" class="mb-3 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                   <option selected>Choose a Mountain</option>
                   <option value="1"> Keystone </option>
                   <option value="2"> Breckenridge </option>
                   <option value="3"> Crested Butte </option>
                 </select>
-                <label for="lifts" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">Select an Lift </label>
-                <select name="lift_id" onChange={handleChange} id="lifts" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                <label for="lifts" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Select an Lift 🚠 </label>
+                <select name="lift_id" onChange={handleChange} id="lifts" class="mb-3 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                   <option  selected>Choose a Lift</option>
-                  {/* {liftMount === "keystoneMounts" ?
-                  {km}
-                  :
-                  liftMount === "breckMounts" ?
-                  {bm}
-                  :
-                  liftMount === "butteMounts" ?
-                  {cm} :
-                  <></>
-                } */}
-                  
                   {km}
                   {bm}{cm}
-                  {/* <option value="1">mountain_id.first.title</option>
-  <option value="2"> mountain_id.second.title </option>
-  <option value="3"> mountain_id.third.title </option> */}
                 </select>
               </div>
               <div>
