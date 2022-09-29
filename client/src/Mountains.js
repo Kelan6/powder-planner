@@ -22,7 +22,7 @@ const mountsArr = mountains.map((mountain)=> {
 
 
   return (
-    <div>  
+    <div className=''>  
       {mountsArr}
     </div>
   )

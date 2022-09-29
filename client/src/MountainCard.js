@@ -5,9 +5,9 @@ function MountainCard({ mountain }) {
 
 
     return (
-        <Card className='w-2/3 pt-10px' href="#">
+        <Card className='w-2/3 pt-10px'>
 
-            <img class="max-w-lg h-auto" src={mountain.image} alt="image description"/>
+            <img class="max-w-lg h-auto" src={mountain.image} alt=''/>
                 <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
                     {mountain.title}
                 </h5>

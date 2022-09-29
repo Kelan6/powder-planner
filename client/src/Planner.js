@@ -32,19 +32,20 @@ function Planner({ currentUser, setCurrentUser }) {
       <th scope="row" class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white">
         {event.name}
       </th>
-      <td class="py-4 px-6">
+      <td class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white">
         {event.mountain.title}
       </td>
-      <td class="py-4 px-6">
+      <td class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white">
         {event.lift.title}
       </td>
-      <td class="py-4 px-6">
+      <td class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white">
         {event.user.name}
       </td>
-      <td class="py-4 px-6">
+      <td class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white">
         {event.time}
       </td>
-      <button onClick={() => onRemoveEvent(event)} className='text-red-600 mt-3'> x </button>
+      <button onClick={() => onRemoveEvent(event)} type="button" class=" mt-2 text-red-700 hover:text-white border border-red-700 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-small rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:border-red-500 dark:text-red-500 dark:hover:text-white dark:hover:bg-red-600 dark:focus:ring-red-900">cancel</button>
+      {/* <button onClick={() => onRemoveEvent(event)} className='text-red-600 mt-3'> cancel </button> */}
     </tr>)
 
   })
