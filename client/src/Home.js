@@ -1,6 +1,5 @@
 import React from 'react'
 import { TypeAnimation } from 'react-type-animation';
-import pic2 from './assets/pic2.jpg'
 import sb1 from './assets/sb1.webp'
 import gsd3 from './assets/gsd3.jpeg'
 import smb from './assets/smb.jpeg'

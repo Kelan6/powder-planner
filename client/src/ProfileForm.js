@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { useHistory } from 'react-router-dom'
-import { Button, Label, TextInput, Modal, Checkbox } from 'flowbite-react'
+import { Button, Label, TextInput, Modal} from 'flowbite-react'
 
 function ProfileForm({ currentUser, setCurrentUser }) {
 
