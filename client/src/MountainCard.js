@@ -5,29 +5,28 @@ function MountainCard({ mountain }) {
 
 
     return (
-       <div>
-        <Card className='flex flex-row pt-10'
-        >
+       <div className='flex flex-col lg:flex lg:flex-row h-1/5 w-full pl-4 pb-5'>
+       
             <div>
-            <img class="max-w-lg h-auto" src={mountain.image} alt=''/>
+            <img class="max-w-lg h-auto " src={mountain.image} alt=''/>
             </div>
-            <div className='flex flex-row'>
+            <div className='flex flex-row pl-5'>
             <div className=' w-6/12'>
-                <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                <h5 className="text-4xl font-bold tracking-tight text-gray-900 dark:text-white pb-1">
                     {mountain.title}
                 </h5>
-                <p className="font-normal text-gray-700 dark:text-gray-400">
+                <p className="text-sm font-normal text-gray-700 dark:text-gray-400 pb-2">
                     {mountain.address}
                 </p>
-                <p className="font-normal text-gray-700 dark:text-gray-400">
+                <p className="font-normal text-gray-700 dark:text-gray-400 pb-3">
                     {mountain.description}
                 </p>
-                <p className="font-normal text-gray-700 dark:text-gray-400">
+                <p className="font-normal text-gray-700 dark:text-gray-400 pb-2">
                     Mountain Elevation: {mountain.elevation}
                 </p>
                 <p className="font-normal text-gray-700 dark:text-gray-400">
                 </p>
-                <div> <a className='pt-1 pb-2 text-gray-900 dark:text-white hover:underline'  target='_blank' href={mountain.map}> Trail Map </a> </div>
+                <div className='pt-2 pb-2'> <a className='text-gray-900 dark:text-white hover:underline '  target='_blank' href={mountain.map}> Winter Trail Map </a> </div>
                 <Dropdown className='mt-1' gradientDuoTone="purpleToBlue" label="Lifts">
                     <Dropdown.Item >
                         {mountain.lifts[0].title}
@@ -65,7 +64,6 @@ function MountainCard({ mountain }) {
                 </Dropdown>
                 </div>
                 </div>
-        </Card>
         </div>
     )
 }
