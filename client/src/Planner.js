@@ -28,8 +28,8 @@ function Planner({ currentUser, setCurrentUser }) {
   
 
   let eventsArr = events.map((event) => {
-    return (<tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
-      <th scope="row" class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+    return (<tr class="bg-white border-b hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700">
+      <th scope="row" class="py-4 px-6 font-medium  text-gray-900 whitespace-nowrap dark:text-white">
         {event.name}
       </th>
       <td class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white">
