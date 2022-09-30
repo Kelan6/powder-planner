@@ -1,8 +1,15 @@
 import React from 'react'
-import {Card, Dropdown} from 'flowbite-react'
+import {useHistory} from 'react-router-dom'
+import {Dropdown} from 'flowbite-react'
 
 function MountainCard({ mountain }) {
 
+    let history = useHistory()
+    
+    function handleLiftClick(){
+        console.log('send to mountains')
+        history.push('./mountains')
+    }
 
     return (
        <div className='flex flex-col lg:flex lg:flex-row h-1/5 w-full pl-4 pb-5'>
@@ -28,37 +35,37 @@ function MountainCard({ mountain }) {
                 </p>
                 <div className='pt-2 pb-2'> <a className='text-gray-900 dark:text-white hover:underline '  target='_blank' href={mountain.map}> Winter Trail Map </a> </div>
                 <Dropdown className='mt-1' gradientDuoTone="purpleToBlue" label="Lifts">
-                    <Dropdown.Item >
+                    <Dropdown.Item onClick={handleLiftClick} >
                         {mountain.lifts[0].title}
                     </Dropdown.Item>
-                    <Dropdown.Item >
+                    <Dropdown.Item onClick={handleLiftClick} >
                         {mountain.lifts[1].title}
                     </Dropdown.Item>
-                    <Dropdown.Item >
+                    <Dropdown.Item onClick={handleLiftClick} >
                         {mountain.lifts[2].title}
                     </Dropdown.Item>
-                    <Dropdown.Item >
+                    <Dropdown.Item onClick={handleLiftClick} >
                         {mountain.lifts[3].title}
                     </Dropdown.Item>
-                    <Dropdown.Item >
+                    <Dropdown.Item onClick={handleLiftClick} >
                         {mountain.lifts[4].title}
                     </Dropdown.Item>
-                    <Dropdown.Item >
+                    <Dropdown.Item onClick={handleLiftClick} >
                         {mountain.lifts[5].title}
                     </Dropdown.Item>
-                    <Dropdown.Item >
+                    <Dropdown.Item onClick={handleLiftClick} >
                         {mountain.lifts[6].title}
                     </Dropdown.Item>
-                    <Dropdown.Item >
+                    <Dropdown.Item onClick={handleLiftClick} >
                         {mountain.lifts[7].title}
                     </Dropdown.Item>
-                    <Dropdown.Item >
+                    <Dropdown.Item onClick={handleLiftClick} >
                         {mountain.lifts[8].title}
                     </Dropdown.Item>
-                    <Dropdown.Item >
+                    <Dropdown.Item onClick={handleLiftClick} >
                         {mountain.lifts[9].title}
                     </Dropdown.Item>
-                    <Dropdown.Item >
+                    <Dropdown.Item onClick={handleLiftClick} >
                         {mountain.lifts[10].title}
                     </Dropdown.Item>
                 </Dropdown>
