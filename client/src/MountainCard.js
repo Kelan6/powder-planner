@@ -33,7 +33,7 @@ function MountainCard({ mountain }) {
                 </p>
                 <p className="font-normal text-gray-700 dark:text-gray-400">
                 </p>
-                <div className='pt-2 pb-2'> <a className='text-gray-900 dark:text-white hover:underline '  target='_blank' href={mountain.map}> Winter Trail Map </a> </div>
+                <div className='pt-2 pb-2'> <a className='text-gray-900 dark:text-white hover:underline '  target='_blank' href={mountain.map}> {mountain.title}'s Winter Trail Map </a> </div>
                 <Dropdown className='mt-1' gradientDuoTone="purpleToBlue" label="Lifts">
                     <Dropdown.Item onClick={handleLiftClick} >
                         {mountain.lifts[0].title}
