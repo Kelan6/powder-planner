@@ -51,7 +51,7 @@ rounded={true}
   >
     {loggedIn ?
     (<Dropdown.Header>
-      <span className="block text-sm"> Welcome  Back {currentUser.name} !
+      <span className="block text-sm"> Welcome  back {currentUser.name}!
       </span>
       <span className="block truncate text-sm font-medium">
         {currentUser.email}
@@ -60,7 +60,7 @@ rounded={true}
     :
     (<Dropdown.Header>
       <span className="block text-sm">
-        Please Log In to view Profile and Events
+        Please Login
       </span>
     </Dropdown.Header>)}
     {loggedIn ? 
