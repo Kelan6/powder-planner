@@ -143,7 +143,7 @@ function EventForm({ currentUser, mounts }) {
                 <div className="mb-2 block">
                   <Label
                     id='time'
-                    value="What Time ⏱"
+                    value="What Date & Time ⏱"
                   />
                 </div>
                 <TextInput
@@ -151,7 +151,7 @@ function EventForm({ currentUser, mounts }) {
                   id="time"
                   name='time'
                   value={formData.time}
-                  placeholder="What Time?"
+                  placeholder="What Date & Time?"
                   required={true}
                 />
               </div>

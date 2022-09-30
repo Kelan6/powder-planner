@@ -72,7 +72,7 @@ function Planner({ currentUser, setCurrentUser }) {
               User
             </th>
             <th scope="col" class="py-3 px-6">
-              Time
+              Date / Time
             </th>
           </tr>
         </thead>
