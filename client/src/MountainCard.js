@@ -28,7 +28,7 @@ function MountainCard({ mountain }) {
                 <p className="font-normal text-gray-700 dark:text-gray-400">
                 </p>
                 <div> <a className='pt-1 pb-2 text-gray-900 dark:text-white hover:underline'  target='_blank' href={mountain.map}> Trail Map </a> </div>
-                <Dropdown className='mt-1' label="Lifts">
+                <Dropdown className='mt-1' gradientDuoTone="purpleToBlue" label="Lifts">
                     <Dropdown.Item >
                         {mountain.lifts[0].title}
                     </Dropdown.Item>
