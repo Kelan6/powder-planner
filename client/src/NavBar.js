@@ -26,6 +26,10 @@ function toProfile(){
   history.push('./profile')
 }
 
+function toLogin(){
+  history.push('./login')
+}
+
   return (
 <Navbar 
 fluid={true}
@@ -47,8 +51,7 @@ rounded={true}
   >
     {loggedIn ?
     (<Dropdown.Header>
-      <span className="block text-sm">
-        {currentUser.name}
+      <span className="block text-sm"> Welcome  Back {currentUser.name} !
       </span>
       <span className="block truncate text-sm font-medium">
         {currentUser.email}
@@ -57,14 +60,26 @@ rounded={true}
     :
     (<Dropdown.Header>
       <span className="block text-sm">
-        Please Login
+        Please Log In to view Profile and Events
       </span>
     </Dropdown.Header>)}
+    {loggedIn ? 
     <Dropdown.Item onClick={toProfile}>Profile
     </Dropdown.Item>
-    <Dropdown.Item>
-    <Link className="route-link" to="/planner"> Events</Link>
+    :
+    <Dropdown.Item onClick={toLogin}>Profile
     </Dropdown.Item>
+    }
+    {loggedIn ? 
+     <Dropdown.Item>
+     <Link className="route-link" to="/planner"> Events</Link>
+     </Dropdown.Item>
+     :
+     <Dropdown.Item>
+     <Link className="route-link" to="/login"> Events</Link>
+     </Dropdown.Item>
+    }
+   
     <Dropdown.Divider />
     <Dropdown.Item>
     {loggedIn ? 
@@ -89,9 +104,16 @@ rounded={true}
   <Navbar.Link href="/mountains">
     Mountains
   </Navbar.Link>
-  <Navbar.Link href="/planner">
-    Meetup +
-  </Navbar.Link>
+  {loggedIn ?
+   <Navbar.Link href="/planner">
+   Meetup +
+ </Navbar.Link>
+ :
+ <Navbar.Link href="/login">
+ Meetup +
+</Navbar.Link>
+}
+ 
 </Navbar.Collapse>
 </Navbar>
   )
