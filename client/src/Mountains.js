@@ -10,7 +10,6 @@ function Mountains() {
       .then((res) => res.json())
       .then((data) => {
         setMountains(data);
-        console.log(mountains)
       });
       
   }, []);

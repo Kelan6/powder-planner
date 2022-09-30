@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { useHistory } from 'react-router-dom'
 import { Button, Label, TextInput, Modal} from 'flowbite-react'
-import snowflake from './assets/snowflake.png'
+
 
 function ProfileForm({ currentUser, setCurrentUser }) {
 

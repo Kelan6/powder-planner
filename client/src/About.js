@@ -8,7 +8,7 @@ function About() {
     
    <div className='pt-10 flex justify-center'>
     <figure class="flex justify-center h-1/3 w-1/3">
-      <img class="max-w-full h-auto rounded-xl" src={p6} alt="image description" />
+      <img class="max-w-full h-auto rounded-xl" src={p6} alt="" />
     </figure>
     </div>
     <div className>
