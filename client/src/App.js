@@ -11,6 +11,7 @@ import About from './About'
 import Profile from './Profile'
 import EventForm from './EventForm';
 import ProfileForm from './ProfileForm'
+import Footer from './Footer'
 
 function App() {
   
@@ -78,6 +79,7 @@ function App() {
           </Route>
         </Switch>
       </div>
+      <Footer/>
     </BrowserRouter>
   );
 }
