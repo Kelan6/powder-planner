@@ -12,6 +12,8 @@ import Profile from './Profile'
 import EventForm from './EventForm';
 import ProfileForm from './ProfileForm'
 import Footer from './Footer'
+import Weather from './Weather';
+
 
 function App() {
   
@@ -76,6 +78,9 @@ function App() {
           </Route>
           <Route path="/update">
             <ProfileForm currentUser={currentUser} setCurrentUser={setCurrentUser}/>
+          </Route>
+          <Route path="/weather">
+            <Weather currentUser={currentUser} setCurrentUser={setCurrentUser}/>
           </Route>
         </Switch>
       </div>

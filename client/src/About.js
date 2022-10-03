@@ -4,7 +4,7 @@ import p6 from './assets/p6.png'
 
 function About() {
   return (
-   <div className=''>
+   <div className='justify-center'>
    <div className='pt-10 flex justify-center'>
     <figure class="flex justify-center h-1/3 w-1/3">
       <img class="max-w-full h-auto rounded-xl" src={p6} alt="" />
