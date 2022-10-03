@@ -72,11 +72,11 @@ rounded={true}
     }
     {loggedIn ? 
      <Dropdown.Item>
-     <Link className="route-link" to="/planner"> Events</Link>
+     <Link className="route-link" to="/planner"> Meetup +</Link>
      </Dropdown.Item>
      :
      <Dropdown.Item>
-     <Link className="route-link" to="/login"> Events</Link>
+     <Link className="route-link" to="/login"> Meetup +</Link>
      </Dropdown.Item>
     }
    
