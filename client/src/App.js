@@ -50,7 +50,7 @@ function App() {
   return (
     <BrowserRouter>
     <NavBar currentUser={currentUser} setCurrentUser={setCurrentUser}loggedIn={loggedIn} setLoggedIn={setLoggedIn}/>
-      <div className="App">
+      {/* <div className="App"> */}
         <Switch>
           <Route exact path="/">
             <Home />
@@ -83,7 +83,7 @@ function App() {
             <Weather currentUser={currentUser} setCurrentUser={setCurrentUser}/>
           </Route>
         </Switch>
-      </div>
+      {/* </div> */}
       <Footer/>
     </BrowserRouter>
   );

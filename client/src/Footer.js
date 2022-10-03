@@ -2,7 +2,7 @@ import React from 'react'
 
 function Footer() {
   return (
-    <div className='justify-between fixed bottom-0 left-0'>
+    <div className='justify-between bottom-4'>
 <footer class=" mt-auto bg-inherit rounded-lg  md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800">
     <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2022 <a href="/" class="hover:underline">Mountain Meetup™</a>
     </span>

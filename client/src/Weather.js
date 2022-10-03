@@ -46,7 +46,7 @@ function Weather({currentUser, setCurrentUser}) {
 
     return (
         
-<React.Fragment>
+<React.Fragment className='bg-gray-100'>
       <Modal
         show={true}
         size="lg"
@@ -55,7 +55,7 @@ function Weather({currentUser, setCurrentUser}) {
         <Modal.Header onClick={handleGoBack} />
         <Modal.Body >
     <div className='flex flex-col items-center'>
-      <h1 className='mt-2 font-bold text-xl text-gray-700'>Check current weather before you meetup 🌦</h1>
+      <h1 className='mt-0 font-bold text-xl text-gray-700'>Check current weather before you meetup 🌦</h1>
       <div className='max-w-xl flex rounded overflow-hidden shadow-lg'>
       <main className='m-3 flex flex-col'>
         <div className="">
