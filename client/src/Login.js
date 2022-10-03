@@ -34,8 +34,8 @@ function Login({ setLoggedIn, setCurrentUser }) {
           history.push("/");
         });
       } else {
-        res.json().then((data) => {
-          setErrors(Object.entries(data.errors));
+        res.json().then((errors) => {
+          setErrors(errors)
           console.log(errors)
         });
       }
@@ -62,7 +62,12 @@ function Login({ setLoggedIn, setCurrentUser }) {
                 <label for="password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Password</label>
                 <input type="password" name="password" id="password" value={password} onChange={handleChange} placeholder="••••••••" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required="" />
               </div>
-              <span>{errors ? errors.map(error => <div className='text-sm text-red-600'><span className='text-black dark:text-white'>{error[0] + ': '}</span> {error[1]}</div>) : null}</span>
+              <div>{errors.length > 0 ?
+                <></>
+                :
+                <h6 className='text-sm text-red-600'>{errors.error}</h6>
+              }
+              </div>
               <div class="flex items-center justify-between">
                 <div class="flex items-start">
                   <div class="flex items-center h-5">
