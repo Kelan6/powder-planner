@@ -4,16 +4,9 @@ import { Button, Label, TextInput, Modal } from 'flowbite-react'
 
 function EventForm({ currentUser, mounts }) {
 
-  const [keystoneMounts, setKeystoneMounts] = useState(mounts[0].lifts)
-  const [breckMounts, setBreckMounts] = useState(mounts[1].lifts)
-  const [butteMounts, setButteMounts] = useState(mounts[2].lifts)
-  // const [liftMount, setLiftMount] = useState("keystoneMounts")
+  const [mountIndex, setMountIndex] = useState(0)
 
   let history = useHistory()
-
-
-
-
 
   const [formData, setFormData] = useState({
     name: '',
@@ -54,37 +47,28 @@ function EventForm({ currentUser, mounts }) {
   function handleChange(e) {
     setFormData({ ...formData, [e.target.name]: e.target.value })
     console.log(formData)
-    // handleMountainChange(e.target.value)
+
   }
 
-  // function handleMountainChange(mountain) {
-  //   console.log(mountain)
 
-  //   if (mountain === "1") {
-  //     setLiftMount("keystoneMounts")
-  //     //fetch first custom route, then set state, then map (outside this function)
-  //   } else if (mountain === "2") {
-  //     //fetch second custom route, then set state, then map (outside this function)
-  //     setLiftMount("breckMounts")
-  //   } else if (mountain === "3") {
-  //     //fetch third custom route, then set state, then map (outside this function)
-  //     setLiftMount("butteMounts")
-  //   }
-  //   else {
-  //     setLiftMount("keystoneMounts")
-  //   }
-  // }
 
-  const km = keystoneMounts.map((lift) => {
-    return <option name ='lift' value={lift.id}>{lift.title}</option>
-  })
+  function handleMountainChange(e) {
+    setFormData({ ...formData, [e.target.name]: e.target.value })
+    if (e.target.value === "1") {
+      setMountIndex(0)
+    }
+    if (e.target.value === "2") {
+      setMountIndex(1)
+    }
+    if (e.target.value === "3") {
+      setMountIndex(2)
+    }
+  }
 
-  const bm = breckMounts.map((lift) => {
-    return <option name ='lift' value={lift.id}>{lift.title}</option>
-  })
 
-  const cm = butteMounts.map((lift) => {
-    return <option name ='lift' value={lift.id}>{lift.title}</option>
+
+  const liftOptions = mounts[mountIndex].lifts.map((lift) => {
+    return <option name='lift' value={lift.id}>{lift.title}</option>
   })
 
 
@@ -126,7 +110,7 @@ function EventForm({ currentUser, mounts }) {
                   />
                 </div>
                 <label for="mountains" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400"></label>
-                <select name='mountain_id' onChange={handleChange} id="mountains" class="mb-3 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                <select name='mountain_id' onChange={handleMountainChange} id="mountains" class="mb-3 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                   <option selected>Choose a Mountain</option>
                   <option value="1"> Keystone </option>
                   <option value="2"> Breckenridge </option>
@@ -134,9 +118,8 @@ function EventForm({ currentUser, mounts }) {
                 </select>
                 <label for="lifts" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Select an Lift 🚠 </label>
                 <select name="lift_id" onChange={handleChange} id="lifts" class="mb-3 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-                  <option  selected>Choose a Lift</option>
-                  {km}
-                  {bm}{cm}
+                  <option selected>Choose a Lift</option>
+                  {liftOptions}
                 </select>
               </div>
               <div>
