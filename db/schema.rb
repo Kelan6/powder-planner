@@ -43,7 +43,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_28_221736) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "name"
+    t.string "name"``
     t.string "password_digest"
     t.string "email"
     t.boolean "snowboarder"
